@@ -86,4 +86,5 @@ app.post("/api/session", async (req, res) => {
 
 app.listen(port, "0.0.0.0", () => {
   console.log("Luna Live ouvindo na porta " + port);
+  console.log("OpenAI key configured:", Boolean(process.env.OPENAI_API_KEY));
 });
