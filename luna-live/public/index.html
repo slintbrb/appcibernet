@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08110f" />
+  <title>Luna Live</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="call-card">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">AGENTE HUMANOIDE • IA</p>
+          <h1>Luna Live</h1>
+        </div>
+        <div id="statusPill" class="status-pill offline"><span></span><b id="status">offline</b></div>
+      </div>
+
+      <div class="stage">
+        <div class="ambient"></div>
+        <div id="avatarFrame" class="avatar-frame idle">
+          <img id="avatar" src="/luna-official.jpg" alt="Avatar oficial da Luna" />
+          <div class="voice-ring"></div>
+        </div>
+
+        <div class="identity">
+          <strong>Luna</strong>
+          <span id="activity">pronta para conversar</span>
+        </div>
+
+        <div class="caption" id="caption">Toque em “Chamar Luna” e permita o microfone.</div>
+      </div>
+
+      <div class="controls">
+        <button id="start" class="call primary" aria-label="Iniciar chamada">
+          <span class="icon">☎</span>
+          <span>Chamar Luna</span>
+        </button>
+        <button id="stop" class="call danger" aria-label="Encerrar chamada" disabled>
+          <span class="icon">×</span>
+          <span>Encerrar</span>
+        </button>
+      </div>
+
+      <details class="panel">
+        <summary>Identidade visual</summary>
+        <p>Você pode trocar temporariamente a foto pela sua referência favorita da Luna. Ela fica apenas neste navegador.</p>
+        <label class="upload">
+          <input id="photoInput" type="file" accept="image/*" />
+          Escolher foto da Luna
+        </label>
+        <button id="resetPhoto" class="ghost">Voltar para a foto oficial</button>
+      </details>
+
+      <details class="panel transcript-panel">
+        <summary>Transcrição da chamada</summary>
+        <div id="transcript" class="transcript" aria-live="polite"></div>
+      </details>
+
+      <p class="fineprint">Luna é uma personagem de IA. A interface simula presença humana; não representa uma pessoa real ou consciente.</p>
+    </section>
+  </main>
+
+  <audio id="remoteAudio" autoplay></audio>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
